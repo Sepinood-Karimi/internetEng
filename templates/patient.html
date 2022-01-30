@@ -7,14 +7,14 @@
 </head>
 <body>
     {% block content%}
-        <p type="button" class="btn btn-secondary"> Patient : {{ patient.first_name }} {{ patient.last_name }}</p>
+        <p type="button" class="btn btn-info"> Patient : {{ patient.first_name }} {{ patient.last_name }}</p>
         <br>
-        <p type="button" class="btn btn-light"> Visits :</p>
+        <p type="button" class="btn btn-light btn-sm"> Visits :</p>
             <ul class="list-group list-group-flush list-group-numbered">
                 {% for visit in visits %}
-                    <li class="list-group-item"> {{ visit.entry_date }}  :  {{ visit.problem }}</li>
+                    <li class="list-group-item list-group-item-primary"> {{ visit.entry_date }}  :  {{ visit.problem }}</li>
                 {% empty %}
-                    <p class="list-group-item"> there is no visit for this patient</p>
+                    <p class="list-group-item list-group-item-danger"> there is no visit for this patient</p>
                 {% endfor %}
             </ul>
     {% endblock content %}
