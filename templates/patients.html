@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {% block content %}
+        <ul>
+            {% for patient in patients %}
+                <a href="/patients/{{patient.id}}"> <li>{{ patient.first_name }} {{ patient.last_name }}</li></a>
+            {% endfor %}
+        </ul>
+    {% endblock content %}
+
+</body>
+</html>
