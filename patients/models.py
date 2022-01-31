@@ -9,6 +9,9 @@ class Patient(models.Model):
     last_name = models.CharField(max_length=250)
     create_date_time = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.first_name
+
 
 class Visit(models.Model):
     patient = models.ForeignKey(Patient, on_delete=models.CASCADE)
